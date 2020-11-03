@@ -7,13 +7,15 @@ const transactionRouter = Router();
 
 const transactionsRepository = new TransactionsRepository();
 
-/*  transactionRouter.get('/', (req, res) => {
+transactionRouter.get('/', (req, res) => {
   try {
-    // TODO
+    const transactions = transactionsRepository.all();
+    const balance = transactionsRepository.getBalance();
+    return res.json({ transactions, balance });
   } catch (err) {
     return res.status(400).json({ error: err.message });
   }
-}); */
+});
 
 transactionRouter.post('/', (req, res) => {
   try {

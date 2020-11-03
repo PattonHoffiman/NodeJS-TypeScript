@@ -19,9 +19,9 @@ class TransactionsRepository {
     this.transactions = [];
   }
 
-  /*  public all(): Transaction[] {
-
-  } */
+  public all(): Transaction[] {
+    return this.transactions;
+  }
 
   public getBalance(): Balance {
     const income = this.sumTransactionValue('income');
